@@ -1,2 +1,6 @@
 name,url,saved_as,fetched_at,size_kb
 pmkisan_home,https://pmkisan.gov.in/,data\raw\pmkisan_home.html,2026-10-20T01:44:18,65.1
+pmkisan_faq,https://pmkisan.gov.in/Documents/RevisedFAQ.pdf,data\raw\pmkisan_faq.pdf,2026-10-20T21:47:19,3633.9
+pmkisan_guidelines,https://pmkisan.gov.in/Documents/RevisedPM-KISANOperationalGuidelines(English).pdf,data\raw\pmkisan_guidelines.pdf,2026-10-20T21:47:21,805.3
+pmkisan_faq_2021,https://static.pib.gov.in/WriteReadData/specificdocs/documents/2021/nov/doc2021112361.pdf,data\raw\pmkisan_faq_2021.pdf,2026-10-20T21:52:59,514.3
+pmkisan_faq_2019,https://fw.pmkisan.gov.in/Documents/FAQPMKISAN.pdf,data\raw\pmkisan_faq_2019.pdf,2026-10-20T21:53:01,158.6

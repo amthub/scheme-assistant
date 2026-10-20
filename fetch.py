@@ -36,4 +36,5 @@ def fetch(url: str, name: str) -> None:
 
 
 if __name__ == "__main__":
-    fetch("https://pmkisan.gov.in/", "pmkisan_home")
+    fetch("https://static.pib.gov.in/WriteReadData/specificdocs/documents/2021/nov/doc2021112361.pdf", "pmkisan_faq_2021")
+    fetch("https://fw.pmkisan.gov.in/Documents/FAQPMKISAN.pdf", "pmkisan_faq_2019")
