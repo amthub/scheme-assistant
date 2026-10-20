@@ -1,0 +1,13 @@
+test,language,top3_faq_no,hit_at_1,hit_at_3
+1,en,"[7, 4, 6]",True,True
+2,hi,"[27, 7, 4]",False,True
+3,hinglish,"[7, 17, 4]",True,True
+4,en,"[4, 0, 6]",False,False
+5,hi,"[12, 25, 13]",True,True
+6,hinglish,"[0, 8, 12]",False,True
+7,en,"[4, 2, 1]",True,True
+8,hi,"[4, 0, 1]",True,True
+9,hinglish,"[0, 1, 4]",False,True
+10,en,"[15, 17, 27]",True,True
+11,hi,"[15, 17, 26]",True,True
+12,hinglish,"[17, 15, 27]",False,True
