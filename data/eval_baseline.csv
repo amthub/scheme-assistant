@@ -10,4 +10,4 @@ test,language,question,correct,top3_faq_no,top3_scores,hit_at_1,hit_at_3,bm25_hi
 9,hinglish,pm kisan mein kitna paisa milta hai aur kitni kisht mein,[4],"[1, 4, 2]","[0.843, 0.83, 0.827]",False,True,False,False,False,True
 10,en,What documents or details do I need to register for PM-Kisan?,[15],"[15, 17, 27]","[0.888, 0.88, 0.856]",True,True,True,True,True,True
 11,hi,पीएम किसान में रजिस्ट्रेशन के लिए कौन से दस्तावेज़ चाहिए,[15],"[15, 17, 26]","[0.86, 0.848, 0.834]",True,True,False,False,True,True
-12,hinglish,pm kisan registration ke liye kaun se documents chahiye,[15],"[17, 15, 27]","[0.871, 0.856, 0.854]",False,True,True,True,False,True
+12,hinglish,pm kisan registration ke liye kaun se documents chahiye,[15],"[17, 15, 27]","[0.871, 0.856, 0.854]",False,True,True,True,True,True

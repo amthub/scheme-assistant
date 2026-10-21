@@ -16,7 +16,7 @@ from sentence_transformers import CrossEncoder
 reranker = CrossEncoder("BAAI/bge-reranker-base")
 USE_RERANKER = False
 
-BM25_WEIGHT = 0.3
+BM25_WEIGHT = 0.6
 
 def norm(x):
     x = np.asarray(x, dtype=float)
