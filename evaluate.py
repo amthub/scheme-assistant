@@ -65,6 +65,7 @@ for i, row in tests.iterrows():
         "bm25_hit_at_3": any(n in correct for n in bm25_top3_faq),
         "hybrid_hit_at_1": hybrid_top3_faq[0] in correct,
         "hybrid_hit_at_3": any(n in correct for n in hybrid_top3_faq),
+         "hybrid_top3_faq": hybrid_top3_faq,
     })
 
 res = pd.DataFrame(results)
@@ -85,4 +86,9 @@ print()
 print("Hybrid (e5 + BM25):")
 print(res.groupby("language")[["hybrid_hit_at_1", "hybrid_hit_at_3"]].mean().round(2))
 print("Hybrid overall hit@3:", round(res["hybrid_hit_at_3"].mean(), 2))
+print()
+print("Hybrid misses (right FAQ not in top 3):")
+for _, r in res[~res["hybrid_hit_at_3"]].iterrows():
+    print(r["language"], "| test", r["test"], "|", r["question"])
+    print("  expected:", r["correct"], "| hybrid top 3:", r["hybrid_top3_faq"])
 res.to_csv("data/eval_baseline.csv", index=False)
