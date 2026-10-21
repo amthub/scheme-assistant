@@ -15,6 +15,14 @@ model = SentenceTransformer("intfloat/multilingual-e5-small")
 from sentence_transformers import CrossEncoder
 reranker = CrossEncoder("BAAI/bge-reranker-base")
 USE_RERANKER = False
+
+BM25_WEIGHT = 0.3
+
+def norm(x):
+    x = np.asarray(x, dtype=float)
+    r = x.max() - x.min()
+    return (x - x.min()) / r if r > 0 else np.zeros_like(x)
+
 from rank_bm25 import BM25Okapi
 
 def tokenize(text):
@@ -35,6 +43,9 @@ for i, row in tests.iterrows():
     bm25_scores = bm25.get_scores(tokenize(row["question"]))
     bm25_top3 = np.argsort(bm25_scores)[::-1][:3]
     bm25_top3_faq = [chunk_faq_no[j] for j in bm25_top3]
+    hybrid = norm(scores) + BM25_WEIGHT * norm(bm25_scores)
+    hybrid_top3 = np.argsort(hybrid)[::-1][:3]
+    hybrid_top3_faq = [chunk_faq_no[j] for j in hybrid_top3]
     top5 = np.argsort(scores)[::-1][:5]
     pairs = [(row["question"], chunks["text"][j]) for j in top5]
     rerank_scores = reranker.predict(pairs) if USE_RERANKER else scores[top5]
@@ -52,6 +63,8 @@ for i, row in tests.iterrows():
         "hit_at_3": any(n in correct for n in top3_faq),
         "bm25_hit_at_1": bm25_top3_faq[0] in correct,
         "bm25_hit_at_3": any(n in correct for n in bm25_top3_faq),
+        "hybrid_hit_at_1": hybrid_top3_faq[0] in correct,
+        "hybrid_hit_at_3": any(n in correct for n in hybrid_top3_faq),
     })
 
 res = pd.DataFrame(results)
@@ -68,4 +81,8 @@ print("Overall hit@3:", round(res["hit_at_3"].mean(), 2))
 print()
 print("BM25 only:")
 print(res.groupby("language")[["bm25_hit_at_1", "bm25_hit_at_3"]].mean().round(2))
+print()
+print("Hybrid (e5 + BM25):")
+print(res.groupby("language")[["hybrid_hit_at_1", "hybrid_hit_at_3"]].mean().round(2))
+print("Hybrid overall hit@3:", round(res["hybrid_hit_at_3"].mean(), 2))
 res.to_csv("data/eval_baseline.csv", index=False)
