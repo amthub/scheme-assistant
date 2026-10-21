@@ -11,3 +11,18 @@ test,language,question,correct,top3_faq_no,top3_scores,hit_at_1,hit_at_3,bm25_hi
 10,en,What documents or details do I need to register for PM-Kisan?,[15],"[15, 17, 27]","[0.888, 0.88, 0.856]",True,True,True,True,True,True
 11,hi,पीएम किसान में रजिस्ट्रेशन के लिए कौन से दस्तावेज़ चाहिए,[15],"[15, 17, 26]","[0.86, 0.848, 0.834]",True,True,False,False,True,True
 12,hinglish,pm kisan registration ke liye kaun se documents chahiye,[15],"[17, 15, 27]","[0.871, 0.856, 0.854]",False,True,True,True,True,True
+13,en,When was the PM-Kisan scheme launched?,[2],"[2, 1, 4]","[0.9, 0.844, 0.84]",True,True,True,True,True,True
+14,en,Will the money be sent directly to my bank account?,[19],"[19, 20, 26]","[0.885, 0.861, 0.848]",True,True,True,True,True,True
+15,en,What can I do if my name is not in the beneficiary list?,[17],"[16, 20, 17]","[0.871, 0.859, 0.851]",False,True,True,True,False,True
+16,en,Are farmers living in villages in urban areas eligible?,[22],"[22, 13, 18]","[0.897, 0.831, 0.823]",True,True,True,True,True,True
+17,en,What happens if I give a wrong declaration?,[9],"[9, 18, 20]","[0.891, 0.812, 0.809]",True,True,True,True,True,True
+18,hi,पीएम किसान योजना कब शुरू हुई थी,[2],"[2, 4, 6]","[0.833, 0.819, 0.806]",True,True,False,False,True,True
+19,hi,क्या बैंक खाते की जानकारी देना ज़रूरी है,[20],"[20, 15, 19]","[0.874, 0.843, 0.822]",True,True,False,False,True,True
+20,hi,अगर लाभार्थी सूची में मेरा नाम नहीं है तो क्या करें,[17],"[17, 16, 12]","[0.843, 0.839, 0.839]",True,True,False,False,True,True
+21,hi,योजना में परिवार की परिभाषा क्या है,[5],"[5, 8, 4]","[0.862, 0.822, 0.821]",True,True,False,False,True,True
+22,hi,क्या छोटी जोत वाले किसानों को भी योजना का लाभ मिलता है,[23],"[4, 8, 25]","[0.848, 0.841, 0.839]",False,False,False,False,False,False
+23,hinglish,pm kisan yojana kab shuru hui thi,[2],"[2, 27, 1]","[0.802, 0.799, 0.799]",True,True,True,True,True,True
+24,hinglish,kya paisa seedha bank account mein aata hai,[19],"[20, 17, 26]","[0.816, 0.815, 0.808]",False,False,False,False,False,False
+25,hinglish,meri kisht nahi aayi to kya baad mein milegi,[27],"[27, 17, 1]","[0.797, 0.793, 0.79]",True,True,False,True,True,True
+26,hinglish,list mein mera naam hai ya nahi kaise pata karein,[16],"[17, 16, 27]","[0.814, 0.813, 0.803]",False,True,False,True,False,True
+27,hinglish,agar galat jaankari di to kya hoga,[9],"[17, 16, 26]","[0.796, 0.791, 0.786]",False,False,False,False,False,False
